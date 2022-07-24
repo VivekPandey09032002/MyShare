@@ -5,7 +5,7 @@ const fs = require('fs')
 const fetchData = async (req,res) =>{
     // fetch all the files of 24 hours old
     
-    const pastDate = new Date(Date.now()) //-24*60*60*1000)
+    const pastDate = new Date(Date.now() -24*60*60*1000)
     const files = await file.find({createdAt : {$lt : pastDate}})
     if(files.length){
         for(const file of files){
