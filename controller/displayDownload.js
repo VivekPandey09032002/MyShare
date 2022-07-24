@@ -14,7 +14,7 @@ const displayDownload = async (req,res) =>{
     }catch(e){
         console.log(e)
     }
-    downloadLink = `${process.env.HOST}/api/${result.uuid}/`
+    downloadLink = `https://my-file-share0-0.herokuapp.com/api/${result.uuid}/`
     const fileName = result.fileNames[0].split('.')[0] + '.zip'
     res.render('download.ejs',{"fileName" : fileName, "fileSize" : totalSize.toFixed(2) , "downloadLink" : downloadLink})
 }
