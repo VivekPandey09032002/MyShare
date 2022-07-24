@@ -34,7 +34,7 @@ const sendEmail = async (req,res) =>{
                     text : `${emailFrom} shared a file with you`,
                     html : require('./emailTemplate.js')({
                         emailFrom,
-                        downloadLink : `${process.env.host}/files/${file.uuid}`,
+                        downloadLink : `https://my-file-share0-0.herokuapp.com/api/files/${file.uuid}`,
                         size : totalSize.toFixed(2) + 'MB',
                         expires : '24 hours'
                     })
