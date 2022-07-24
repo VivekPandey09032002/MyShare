@@ -4,8 +4,8 @@ const fs = require('fs')
 require('./db/connection.js')
 async function fetchData() {
     // fetch all the files of 24 hours old
-    // -24*60*60*1000
-    const pastDate = new Date(Date.now() )
+    // 
+    const pastDate = new Date(Date.now() -24*60*60*1000)
     const files = await file.find({createdAt : {$lt : pastDate}})
     if(files.length){
         for(const file of files){
