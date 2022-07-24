@@ -14,7 +14,9 @@ const fetchData = async (req,res) =>{
                 
                 for(let index=0; index < file.fileNames.length;index++){
                     const mypath  = path.resolve(`./upload/${file.fileNames[index]}`)
-                    fs.unlinkSync(mypath)
+                    if(fs.existsSync(mypath)){
+                        fs.unlinkSync(mypath)
+                    }
                 }
                 if(fs.existsSync(downloadPath)){
                     fs.unlinkSync(downloadPath)
