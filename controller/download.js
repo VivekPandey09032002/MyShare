@@ -30,7 +30,7 @@ const downloadFile = async (req,res) => {
                         const pdfData = fs.readFileSync(mypath);
                         zip.file(result.fileNames[index],pdfData)
                         //delete that file
-                        fs.unlinkSync(mypath)
+                        // fs.unlinkSync(mypath)
                     }
                 }catch(e){
                     //error while creating zip or delteting it.

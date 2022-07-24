@@ -5,7 +5,7 @@ const OPTIONS = {
     useUnifiedTopology : true,
 }
 
-db.connect(process.env.DB_URI, OPTIONS)
+db.connect(process.env.DB_URI || "mongodb+srv://vivek123:vivek123@cluster0.zfqfu.mongodb.net/?retryWrites=true&w=majority", OPTIONS)
 .then(
 // success
 (success) => {
